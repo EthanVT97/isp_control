@@ -1,0 +1,5 @@
+{
+  "name": "Viber Bot Admin Panel",
+  "description": "A web application to manage and configure a Viber bot, including welcome messages, auto-replies, broadcasts, and customer service interactions. Integrates with Gemini API for AI-powered responses.",
+  "requestFramePermissions": []
+}

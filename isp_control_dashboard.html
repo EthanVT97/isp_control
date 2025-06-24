@@ -875,5 +875,38 @@
         <button class="btn btn-small" style="background: #17a2b8;" onclick="checkHealth('Router-002')">Check Health</button>
     </div>
     </div>
-                    
-                    
+    <script>
+    // Handle Sidebar Tab Clicks
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Remove 'active' class
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+
+            this.classList.add('active');
+            const sectionId = this.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+        });
+    });
+
+    // Show / Hide New Customer Form
+    function showNewCustomerForm() {
+        document.getElementById('newCustomerForm').style.display = 'block';
+    }
+
+    function hideNewCustomerForm() {
+        document.getElementById('newCustomerForm').style.display = 'none';
+    }
+
+    function createCustomerAccount() {
+        alert('✔️ Account created (simulated) — you’ll connect this to Supabase/NestJS backend later.');
+        hideNewCustomerForm();
+    }
+
+    // Make functions global
+    window.showNewCustomerForm = showNewCustomerForm;
+    window.hideNewCustomerForm = hideNewCustomerForm;
+    window.createCustomerAccount = createCustomerAccount;
+    </script>
+    
